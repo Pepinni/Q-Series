@@ -31,8 +31,8 @@ app.use(session({
 app.use(passport.initialize()); 
 app.use(passport.session());
 
-// mongoose.connect("mongodb://localhost:27017/Markos", {useNewUrlParser: true,useUnifiedTopology: true,});
-mongoose.connect(String(process.env.PASS),{ useNewUrlParser: true , useUnifiedTopology: true});
+mongoose.connect("mongodb://localhost:27017/Markos", {useNewUrlParser: true,useUnifiedTopology: true,});
+// mongoose.connect(String(process.env.PASS),{ useNewUrlParser: true , useUnifiedTopology: true});
 // mongoose.set('useCreateIndex', true);
 
 
@@ -102,8 +102,8 @@ passport.deserializeUser(function(id, done) {
 passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: "https://mac-markos.herokuapp.com/auth/google/markos",
-    // callbackURL: "http://localhost:3000/auth/google/markos",
+    // callbackURL: "https://mac-markos.herokuapp.com/auth/google/QSeries",
+    callbackURL: "http://localhost:3000/auth/google/QSeries",
     userProfileUrl : "https://www.googleapis.com.oauth2.v3.userinfo"
   },
   function(accessToken, refreshToken, profile, cb) {
@@ -136,7 +136,7 @@ app.get('/auth/google', passport.authenticate('google', {
   scope : ['profile','email']
 }));
 
-app.get('/auth/google/markos', 
+app.get('/auth/google/QSeries', 
 passport.authenticate('google', { failureRedirect: '/' }),
 function(req, res) {
   // Successful authentication, redirect home.
@@ -160,7 +160,7 @@ app.get('/account', function(req,res){
         console.log(err);
       }
       else{
-        if(req.user.name === "MAC ECA SOCIETY Markos"){
+        if(req.user.email === "b20163@students.iitmandi.ac.in"){
           res.render("admin", {name:studentName, user:req.user, event:found});
         }
         else{

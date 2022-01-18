@@ -28,6 +28,7 @@ h2 {
 .logo{
   width:300px;
   margin:30px auto 30px auto;
+  border-radius: 50%;
 }
 .tag{
   font-weight: bolder;
@@ -53,7 +54,7 @@ h2 {
 .half, .half .container > .row {
   height: 100vh; }
 
-@media (max-width: 991.98px) {
+@media (max-width: 900px) {
   .half .bg {
     height: 500px; } }
 
