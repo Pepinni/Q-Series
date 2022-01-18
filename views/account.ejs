@@ -1,0 +1,53 @@
+<%- include('partials/header') %>
+
+    <!-- Events -->
+    <section id="events">
+        <h1 class="upcoming">Upcoming Events!</h1>
+        <div class="container-fluid event-flyer">
+            <% event.forEach(function(event){ %>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <img src="<%= event.event_banner %>" class="event-pic">
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-8">
+                        <h2>
+                            <%= event.event_name %>
+                        </h2>
+                        <p>
+                            <%= event.event_description %>
+                        </p>
+                        <h3>
+                            <%= event.date %>
+                        </h3>
+                        <!-- <iframe name="votar" style="display:none;"></iframe> -->
+                        <%if(user.registration.event_name !==event.event_name){%>
+                            <form class="register" action="/register" method="POST">
+                                <input type="text" name="event_name" value="<%=event.event_name%>" hidden>
+                                <button type="submit" class="btn btn-outline-danger">Register</button>
+                            </form>
+                            <%}else{%>
+                                <%const present=new Date(); %>
+                                    <%if(present<=event.date){%>
+                                        <button class="btn btn-outline-danger">Registration Complete</button>
+                                        <%}else{%>
+                                            <%if(user.registration.ticked.length===0){%>
+                                                <form class="register" action="/start" method="POST">
+                                                    <input type="text" name="event_name" value="<%=event.event_name%>"
+                                                        hidden>
+                                                    <button type="submit" class="btn btn-outline-danger">Start
+                                                        Test</button>
+                                                </form>
+                                                <%}else{%>
+                                                    <h3>Your Score is <%=user.registration.score%>
+                                                    </h3>
+                                                    <%}%>
+                                                        <%}%>
+
+                                                            <%}%>
+                    </div>
+                </div>
+                <%});%>
+        </div>
+    </section>
+
+    <%- include('partials/footer') %>

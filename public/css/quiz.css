@@ -1,0 +1,31 @@
+.event-title{
+    margin:auto;
+    padding : 0 50px 0 50px;
+    font-size:50px;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.question{
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.q-block{
+    padding: 20px 20px 20px 20px;
+    margin : 0px 50px 40px 50px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 30px;
+}
+.opts{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+    margin-top: 10px;
+}
+.for-button{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+.sub-btn{
+    font-size: 25px;
+    border-radius: 20px;
+}

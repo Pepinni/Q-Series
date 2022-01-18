@@ -1,0 +1,36 @@
+{
+  "name": "markos",
+  "version": "16.5.0",
+  "description": "This is the code repository for Markos's, official test conducting web application",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pepinni/Markos.git"
+  },
+  "author": "Piyush",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Pepinni/Markos/issues"
+  },
+  "homepage": "https://github.com/Pepinni/Markos#readme",
+  "dependencies": {
+    "connect-mongo": "^4.6.0",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "lodash": "^4.17.21",
+    "mongo-store": "^0.0.2",
+    "mongoose": "^6.0.14",
+    "mongoose-findorcreate": "^3.0.0",
+    "passport": "^0.5.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-local-mongoose": "^6.1.0"
+  },
+  "engines": {
+    "node": "16.5.0"
+  }
+}
