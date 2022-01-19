@@ -172,7 +172,17 @@ app.get('/account', function(req,res){
     })
   }
 })
-
+app.get('/timer/:paramID', function(req,res){
+  const event_name = req.params.paramID;
+  Event.findOne({event_name : event_name}, function(err,event){
+    if(err){
+      console.log(err);
+    }
+    else{
+      res.json({startDate:event.startDate, endDate:event.endDate});
+    }
+  })
+})
 ////////////////////////////////////////////////
 ///////       Post Methods        //////////
 ////////////////////////////////////////////////
