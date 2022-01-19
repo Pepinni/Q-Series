@@ -5,6 +5,31 @@
     text-align: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+
+.quiz-form{
+    height:70%;
+    width:80%;
+    position:fixed;
+    right:0;
+    overflow-x: auto;
+    z-index:1;
+}
+
+.timer-box{
+    height:70%;
+    width:20%;
+    position:fixed;
+    left:0;
+    z-index:1;
+}
+
+.timer{
+    border:solid;
+    width:90%;
+    margin-left:auto;
+    text-align: center;
+}
+
 .question{
     font-size: 30px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
