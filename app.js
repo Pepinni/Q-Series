@@ -31,7 +31,7 @@ app.use(session({
 app.use(passport.initialize()); 
 app.use(passport.session());
 
-mongoose.connect("mongodb://localhost:27017/Markos", {useNewUrlParser: true,useUnifiedTopology: true,});
+mongoose.connect("mongodb://localhost:27017/QSeries", {useNewUrlParser: true,useUnifiedTopology: true,});
 // mongoose.connect(String(process.env.PASS),{ useNewUrlParser: true , useUnifiedTopology: true});
 // mongoose.set('useCreateIndex', true);
 
@@ -70,7 +70,9 @@ const questionSchema = new mongoose.Schema({
 const eventSchema = new mongoose.Schema({
     event_name : String,
     event_description: String,
-    date : Date,
+    // date : Date,
+    startDate : Date,
+    endDate : Date,
     event_banner : String,
     questions : [questionSchema],
 });
@@ -180,7 +182,8 @@ app.post('/addevent',function(req,res){
   const newEvent = new Event({
     event_name : req.body.event_name,
     event_description: req.body.event_description,
-    date : req.body.date,
+    startDate : req.body.startDdate,
+    endDate : req.body.endDdate,
     event_banner : req.body.link
   })
   newEvent.save(function(err){
@@ -226,10 +229,10 @@ app.post('/register', function(req,res){
   User.findById(req.user._id, function(err,foundUser){
     if(err){
       console.log(err);
-      // res.redirect("/account");
+      res.redirect("/account");
     }
     else{
-      // console.log(req.user._id);
+      console.log(req.user._id);
       foundUser.registration.event_name = req.body.event_name;
       foundUser.save();
       res.redirect('/account');

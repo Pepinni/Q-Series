@@ -17,7 +17,7 @@
                             <%= event.event_description %>
                         </p>
                         <h3>
-                            <%= event.date %>
+                            <%= event.startDate %>
                         </h3>
                         <!-- <iframe name="votar" style="display:none;"></iframe> -->
                         <%if(user.registration.event_name !==event.event_name){%>
@@ -27,7 +27,7 @@
                             </form>
                             <%}else{%>
                                 <%const present=new Date(); %>
-                                    <%if(present<=event.date){%>
+                                    <%if(present<=event.startDate){%>
                                         <button class="btn btn-outline-danger">Registration Complete</button>
                                         <%}else{%>
                                             <%if(user.registration.ticked.length===0){%>
