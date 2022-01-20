@@ -1,11 +1,12 @@
 const event_name = $(".event-title").text();
+console.log(event_name);
 const path = "/timer/" + String(event_name);
 
 
 $.get(path, function(DATA){
 	const startDate = DATA.startDate;
 	const endDate = DATA.endDate;
-	
+	console.log(startDate,endDate);
 	const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 	const weekdays = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 	
@@ -43,6 +44,7 @@ $.get(path, function(DATA){
 	if (t < 0) {
 		clearInterval(countdown);
 		console.log("TIME OVER");
+		$(".quiz-form").submit();
 	}
 	}
 

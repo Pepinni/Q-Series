@@ -192,8 +192,8 @@ app.post('/addevent',function(req,res){
   const newEvent = new Event({
     event_name : req.body.event_name,
     event_description: req.body.event_description,
-    startDate : req.body.startDdate,
-    endDate : req.body.endDdate,
+    startDate : req.body.startDate,
+    endDate : req.body.endDate,
     event_banner : req.body.link
   })
   newEvent.save(function(err){
