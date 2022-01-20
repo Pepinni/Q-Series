@@ -1,8 +1,7 @@
 body {
   font-family: "Roboto", sans-serif;
-background-color: #f9c1b1;
-background-image: linear-gradient(315deg, #f9c1b1 0%, #fb8085 74%);
-
+  background-color: #f9c1b1;
+  background-image: linear-gradient(315deg, #f9c1b1 0%, #fb8085 74%);
 }
 
 
