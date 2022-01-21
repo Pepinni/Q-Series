@@ -4,15 +4,15 @@
 </style>
 <!-- Events -->
 <section id="events">
-    <h1 class="upcoming">Your Tests!</h1>
-    <hr>
-    <div class="container-fluid event-flyer">
-        <% event.forEach(function(event){ %>
+    <h1 class="tests">Your Tests!</h1>
+    <!-- <hr> -->
+    <% event.forEach(function(event){ %>
+    <div class="container-fluid quiz-flyer" style="margin-top:20px;" >
         <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-4">
+            <div class="col-lg-2 col-md-2 col-sm-12 ">
                 <img src="<%= event.event_banner %>" class="event-pic">
             </div>
-            <div class="col-lg-8 col-md-8 col-sm-8">
+            <div class="col-lg-8 col-md-8 col-sm-12 quiz-info">
                 <h2 class="event-name">
                     <%= event.event_name %>
                 </h2>
@@ -20,7 +20,7 @@
                     <%= event.event_description %>
                 </p>
                 <h3 class="startDate">
-                    <%= event.startDate %>
+                    <%= event.startDate.toLocaleString(); %>
                 </h3>
                 <%if(user.registration.event_name !==event.event_name){%>
                 <form class="register" action="/register" method="POST">
@@ -47,8 +47,8 @@
                 <%}%>
                     </div>
                 </div>
-                <%});%>
             </div>
+                <%});%>
 </section>
 
 <%- include('partials/footer') %>

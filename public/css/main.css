@@ -1,9 +1,9 @@
 body{
-    /* background-color: #f9c1b1;
-    background-image: linear-gradient(315deg, #f9c1b1 0%, #fb8085 74%);
+    background-color: #eec0c6;
+    background-image: linear-gradient(315deg, #eec0c6 0%, #7ee8fa 74%);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover; */
+    background-size: cover;
 }
 
 hr:not([size]){
@@ -16,7 +16,7 @@ hr:not([size]){
 
 /* Navbar */
 #title, #events{
-    padding: 10px 90px 25px 90px;
+    padding: 5px 90px 10px 90px;
     color:black;
     font-size: 15px;
 }
@@ -45,9 +45,8 @@ hr:not([size]){
     }
 }
 /* Events */
-.upcoming{
+.tests{
     text-align: center;
-    /* font-family: verdana,Geneva, Tahoma, sans-serif; */
     font-family: 'Dongle', Verdana;
     font-weight: bolder;
     font-size: 60px;
@@ -56,13 +55,58 @@ hr:not([size]){
     width:100px;
     border-radius: 50%;
 }
-.event-flyer{
-    padding-top:80px;
+.quiz-flyer{
+    padding:40px 30px 30px 30px;
+    width: 70%;
+    margin:auto;
+    border-style:solid;
+    border-radius: 20px;
+    border-color: rgb(255, 123, 0);
+    background-color: #fff;
+}
+.quiz-info{
+    position:relative;
+    margin-left:30px;
+    line-height: 1.5px;
 }
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 .event-name{
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Dongle', Verdana;
     text-decoration: solid;
+    font-size: 40px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap');
+.event-description{
+    font-family: 'Nunito Sans', sans-serif;
+}
+.startDate{
+    font-family: 'Orbitron';
+    font-size: 20px;
+}
+button:not([navbar-toggler]){
+    position:absolute;
+    right:0;
+    bottom:0px;
+}
+@media only screen and (max-width:767px){
+    button:not(.navbar-toggler){
+        position:absolute;
+        right:20px;
+        bottom:-35px;
+    }
+    .quiz-flyer{
+        width:100%;
+        text-align: center;
+        padding:40px 40px 40px 0px;
+
+    }
+    .startDate, .event-description{
+        font-size: 10px;
+    }
+    .event-name{
+        font-size: 30px;
+    }
+
 }
 
 /* Add Event */
