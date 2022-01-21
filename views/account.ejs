@@ -1,8 +1,10 @@
 <%- include('partials/header') %>
-
-    <!-- Events -->
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Dongle:wght@700&display=swap');
+</style>
+<!-- Events -->
     <section id="events">
-        <h1 class="upcoming">Upcoming Tests!</h1>
+        <h1 class="upcoming">Your Tests!</h1>
         <div class="container-fluid event-flyer">
             <% event.forEach(function(event){ %>
                 <div class="row">
@@ -10,13 +12,13 @@
                         <img src="<%= event.event_banner %>" class="event-pic">
                     </div>
                     <div class="col-lg-8 col-md-8 col-sm-8">
-                        <h2>
+                        <h2 class="event-name">
                             <%= event.event_name %>
                         </h2>
-                        <p>
+                        <p class="event-description">
                             <%= event.event_description %>
                         </p>
-                        <h3>
+                        <h3 class="startDate">
                             <%= event.startDate %>
                         </h3>
                         <!-- <iframe name="votar" style="display:none;"></iframe> -->
@@ -38,7 +40,7 @@
                                                         Test</button>
                                                 </form>
                                                 <%}else{%>
-                                                    <h3>Your Score is <%=user.registration.score%>
+                                                    <h3 class="score">Your Score is <%=user.registration.score%>
                                                     </h3>
                                                     <%}%>
                                                         <%}%>
