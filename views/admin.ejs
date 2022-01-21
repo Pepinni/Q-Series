@@ -1,191 +1,186 @@
 <%- include('partials/header') %>
-
-    <!-- Events -->
-    <section id="events">
-        <h1 class="upcoming">Upcoming Tests!</h1>
-        <div class="container-fluid event-flyer">
-
-            <!-- <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                    <img src="images/logo.png" class="event-pic">
-                </div>
-                <div class="col-lg-8 col-md-8 col-sm-8">
-                    <h2>Event Title</h2>
-                    <p>Event Description</p>
-                    <h3>Date</h3>
-                    <button type="button" class="btn btn-outline-danger">Register</button>
-                </div>
-            </div> -->
-            <% event.forEach(function(event){ %>
-                <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-4">
-                        <img src="<%= event.event_banner %>" class="event-pic">
-                    </div>
-                    <div class="col-lg-8 col-md-8 col-sm-8">
-                        <h2><%= event.event_name %></h2>
-                        <p><%= event.event_description %></p>
-                        <h3><%= event.date %></h3>
-                        <form class="register" action="/delevent" method="POST">
-                            <input type="text" name="event_name" value="<%=event.event_name%>" hidden>
-                            <button type="submit" class="btn btn-outline-danger" >Delete This Event</button>
-                        </form>
-                    </div>
-                </div>
-            <%});%>
-        </div>
-    </section>
-
-    <!-- Creating event -->
-    <section id="add-event">
-        <p>
-            <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
-                data-bs-target="#add" aria-expanded="false" aria-controls="collapseWidthExample">
-                Add Event
-            </button>
-        </p>
-        <div style="min-height: 50px;">
-            <div class="collapse collapse-horizontal" id="add">
-                <div class="card card-body" style="width: 900px;">
-                    <form class="add-event-form" action="addevent" method="POST">
-                        <div class="form-group row">
-                            <label for="event_name" class="col-sm-2 col-form-label">Event Title/Name</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="event_name" placeholder="Event Name"
-                                    name="event_name">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="event_description" class="col-sm-2 col-form-label">Describe your event</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="event_description"
-                                    placeholder="Event Description" name="event_description">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="startDate" class="col-sm-2 col-form-label">Tentative start date</label>
-                            <div class="col-sm-10">
-                                <input type="datetime-local" class="form-control" id="startDate" placeholder="Date" name="startDate">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="endDate" class="col-sm-2 col-form-label">Tentative end date</label>
-                            <div class="col-sm-10">
-                                <input type="datetime-local" class="form-control" id="endDate" placeholder="Date" name="endDate">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="Date" class="col-sm-2 col-form-label">Event Banner link</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="Date" placeholder="link to the banner image"
-                                    name="link">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-10">
-                                <button type="submit" class="btn btn-primary">Add</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@700&display=swap');
+</style>
+<!-- Events -->
+<section id="events">
+    <h1 class="tests">Your Tests!</h1>
+    <!-- <hr> -->
+    <% event.forEach(function(event){ %>
+    <div class="container-fluid quiz-flyer" style="margin-top:20px;">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-12 ">
+                <img src="<%= event.event_banner %>" class="event-pic">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 quiz-info">
+                <h2 class="event-name">
+                    <%= event.event_name %>
+                </h2>
+                <p class="event-description">
+                    <%= event.event_description %>
+                </p>
+                <h3 class="startDate">
+                    <%= event.startDate.toLocaleString(); %>
+                </h3>
+                <form class="register" action="/delevent" method="POST">
+                    <input type="text" name="event_name" value="<%=event.event_name%>" hidden>
+                    <button type="submit" class="btn btn-outline-danger">Delete This Event</button>
+                </form>
             </div>
         </div>
-    </section>
-    
-    <!-- Delete Event -->
-    <section id="del-event">
-        <p>
-            <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
-                data-bs-target="#delete" aria-expanded="false" aria-controls="collapseWidthExample">
-                Add Question
-            </button>
-        </p>
-        <div style="min-height: 50px;">
-            <div class="collapse collapse-horizontal" id="delete">
-                <div class="card card-body" style="width: 900px;">
-                    <form class="add-event-form" action="/addq" method="POST">
-                        <div class="form-group row">
-                            <label for="event_name" class="col-sm-2 col-form-label">Event Title/Name</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="event_name" placeholder="Event Name"
-                                    name="event_name">
-                            </div>
+    </div>
+    <%});%>
+</section>
+
+<!-- Creating event -->
+<section id="add-event">
+    <p>
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#add"
+            aria-expanded="false" aria-controls="collapseWidthExample">
+            Add Event
+        </button>
+    </p>
+    <div style="min-height: 50px;">
+        <div class="collapse collapse-horizontal" id="add">
+            <div class="card card-body" style="width: 900px;">
+                <form class="add-event-form" action="addevent" method="POST">
+                    <div class="form-group row">
+                        <label for="event_name" class="col-sm-2 col-form-label">Event Title/Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="event_name" placeholder="Event Name"
+                                name="event_name">
                         </div>
-                        <div class="form-group row">
-                            <label for="question" class="col-sm-2 col-form-label">Question</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="question" placeholder="question"
-                                    name="question">
-                            </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="event_description" class="col-sm-2 col-form-label">Describe your event</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="event_description"
+                                placeholder="Event Description" name="event_description">
                         </div>
-                        <div class="form-group row">
-                            <label for="optiona" class="col-sm-2 col-form-label">Option A</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="optiona" placeholder="Option-A"
-                                    name="optiona">
-                            </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="startDate" class="col-sm-2 col-form-label">Tentative start date</label>
+                        <div class="col-sm-10">
+                            <input type="datetime-local" class="form-control" id="startDate" placeholder="Date"
+                                name="startDate">
                         </div>
-                        <div class="form-group row">
-                            <label for="optionb" class="col-sm-2 col-form-label">Option B</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="optionb" placeholder="Option-B"
-                                    name="optionb">
-                            </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="endDate" class="col-sm-2 col-form-label">Tentative end date</label>
+                        <div class="col-sm-10">
+                            <input type="datetime-local" class="form-control" id="endDate" placeholder="Date"
+                                name="endDate">
                         </div>
-                        <div class="form-group row">
-                            <label for="optionc" class="col-sm-2 col-form-label">Option C</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="optionc" placeholder="Option-C"
-                                    name="optionc">
-                            </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="Date" class="col-sm-2 col-form-label">Event Banner link</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="Date" placeholder="link to the banner image"
+                                name="link">
                         </div>
-                        <div class="form-group row">
-                            <label for="optiond" class="col-sm-2 col-form-label">Option D</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="optiond" placeholder="Option-D"
-                                    name="optiond">
-                            </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-primary">Add</button>
                         </div>
-                        <fieldset class="form-group">
-                            <div class="row">
-                              <legend class="col-form-label col-sm-2 pt-0">Correct Option</legend>
-                              <div class="col-sm-10">
-                                <div class="form-check">
-                                  <input class="form-check-input" type="radio" name="correct" id="a" value="A">
-                                  <label class="form-check-label" for="a">
-                                    A
-                                  </label>
-                                </div>
-                                <div class="form-check">
-                                  <input class="form-check-input" type="radio" name="correct" id="b" value="B">
-                                  <label class="form-check-label" for="b">
-                                    B
-                                  </label>
-                                </div>
-                                <div class="form-check">
-                                  <input class="form-check-input" type="radio" name="correct" id="c" value="C">
-                                  <label class="form-check-label" for="c">
-                                    C
-                                  </label>
-                                </div>
-                                <div class="form-check">
-                                  <input class="form-check-input" type="radio" name="correct" id="d" value="D">
-                                  <label class="form-check-label" for="d">
-                                    D
-                                  </label>
-                                </div>
-                              </div>
-                            </div>
-                          </fieldset>
-                        <div class="form-group row">
-                            <div class="col-sm-10">
-                                <button type="submit" class="btn btn-primary">Add</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<!-- Add Question -->
+<section id="del-event">
+    <p>
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#delete"
+            aria-expanded="false" aria-controls="collapseWidthExample">
+            Add Question
+        </button>
+    </p>
+    <div style="min-height: 50px;">
+        <div class="collapse collapse-horizontal" id="delete">
+            <div class="card card-body" style="width: 900px;">
+                <form class="add-event-form" action="/addq" method="POST">
+                    <div class="form-group row">
+                        <label for="event_name" class="col-sm-2 col-form-label">Event Title/Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="event_name" placeholder="Event Name"
+                                name="event_name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="question" class="col-sm-2 col-form-label">Question</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="question" placeholder="question"
+                                name="question">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="optiona" class="col-sm-2 col-form-label">Option A</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="optiona" placeholder="Option-A" name="optiona">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="optionb" class="col-sm-2 col-form-label">Option B</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="optionb" placeholder="Option-B" name="optionb">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="optionc" class="col-sm-2 col-form-label">Option C</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="optionc" placeholder="Option-C" name="optionc">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="optiond" class="col-sm-2 col-form-label">Option D</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="optiond" placeholder="Option-D" name="optiond">
+                        </div>
+                    </div>
+                    <fieldset class="form-group">
+                        <div class="row">
+                            <legend class="col-form-label col-sm-2 pt-0">Correct Option</legend>
+                            <div class="col-sm-10">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="correct" id="a" value="A">
+                                    <label class="form-check-label" for="a">
+                                        A
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="correct" id="b" value="B">
+                                    <label class="form-check-label" for="b">
+                                        B
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="correct" id="c" value="C">
+                                    <label class="form-check-label" for="c">
+                                        C
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="correct" id="d" value="D">
+                                    <label class="form-check-label" for="d">
+                                        D
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-primary">Add</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 
