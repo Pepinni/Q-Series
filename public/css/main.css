@@ -6,10 +6,12 @@ body{
     background-size: cover; */
 }
 
-hr{
+hr:not([size]){
     border:none;
-    height:20px;
-    background-color:red;
+    height: 2.5px;
+    color:orange;
+    width:50%;
+    margin:auto;
 }
 
 /* Navbar */
