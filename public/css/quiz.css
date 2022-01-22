@@ -8,9 +8,9 @@
 
 .quiz-form{
     width:60%;
-    float: right;
-    margin-right: 10%;
-    margin-bottom: 200px;
+    /* float: right; */
+    margin-left: 30%;
+    margin-bottom: 100px;
 }
 
 .timer-box{

@@ -1,0 +1,202 @@
+<%- include('partials/header') %>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap');
+</style>
+<div class="container-fluid">
+  <div class="event-title"><%=event.event_name %></div>
+
+  <div class="timer-box">
+    <div class="timer">
+      <div class="timer-hours"><span class="hours">h</span>h</div>
+      <div class="timer-minutes"><span class="mins">m</span>m</div>
+      <div class="timer-seconds"><span class="secs">s</span>s</div>
+    </div>
+  </div>
+
+  <!-- Questions in the quiz -->
+  <form class="quiz-form" method="POST">
+    <% for(var i=0; i < event.questions.length; i++){ %>
+    <div class="q-block">
+      <p class="question">
+        <%=event.questions[i].question%>
+      </p>
+      <hr>
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 opts">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="<%= " ans_" + i + "ans" %>" value="A" id="<%= i
+                  + " o1" %>">
+            <label class="form-check-label" for="<%= i + " o1" %>">
+              <%=event.questions[i].option_a%>
+            </label>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 opts">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="<%= " ans_" + i + "ans" %>" value="B" id="<%= i
+                  + " o2" %>">
+            <label class="form-check-label" for="<%= i + " o2" %>">
+              <%=event.questions[i].option_b%>
+            </label>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 opts">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="<%= " ans_" + i + "ans" %>" value="C" id="<%= i
+                  + " o3" %>">
+            <label class="form-check-label" for="<%= i + " o3" %>">
+              <%=event.questions[i].option_c%>
+            </label>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 opts">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="<%= " ans_" + i + "ans" %>" value="D" id="<%= i
+                  + " o4" %>">
+            <label class="form-check-label" for="<%= i + " o4" %>">
+              <%=event.questions[i].option_d%>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% } %>
+    <div class="for-button">
+      <button type="submit" class="btn btn-outline-danger sub-btn" disabled>Submit</button>
+    </div>
+
+  </form>
+</div>
+
+<!-- Add Question in the quiz -->
+<section id="add-q">
+    <p class="add-q-btn-container">
+        <button class="btn btn-outline-danger add" type="button" data-bs-toggle="collapse" data-bs-target="#delete"
+            aria-expanded="false" aria-controls="collapseWidthExample">
+            Add Question
+        </button>
+    </p>
+    <div style="min-height: 50px;">
+        <div class="collapse collapse-horizontal" id="delete">
+            <div class="card card-body">
+                <form class="add-event-form" action="/addq" method="POST">
+                    <div class="form-group row" hidden>
+                        <label for="event_name" class="col-sm-2 col-form-label">Event Title/Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="event_name" placeholder="Event Name"
+                                name="event_name" value="<%=event.event_name%>">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="question" class="col-sm-2 col-form-label">Question</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="question" placeholder="question"
+                                name="question">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="optiona" class="col-sm-2 col-form-label">Option A</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="optiona" placeholder="Option-A" name="optiona">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="optionb" class="col-sm-2 col-form-label">Option B</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="optionb" placeholder="Option-B" name="optionb">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="optionc" class="col-sm-2 col-form-label">Option C</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="optionc" placeholder="Option-C" name="optionc">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="optiond" class="col-sm-2 col-form-label">Option D</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="optiond" placeholder="Option-D" name="optiond">
+                        </div>
+                    </div>
+                    <fieldset class="form-group">
+                        <div class="row">
+                            <legend class="col-form-label col-sm-2 pt-0">Correct Option</legend>
+                            <div class="col-sm-10">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="correct" id="a" value="A">
+                                    <label class="form-check-label" for="a">
+                                        A
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="correct" id="b" value="B">
+                                    <label class="form-check-label" for="b">
+                                        B
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="correct" id="c" value="C">
+                                    <label class="form-check-label" for="c">
+                                        C
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="correct" id="d" value="D">
+                                    <label class="form-check-label" for="d">
+                                        D
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-primary add add-q-submit">Add</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Delete a set Question in the quiz -->
+<section id="del-q">
+    <p class="add-q-btn-container">
+        <button class="btn btn-outline-danger add" type="button" data-bs-toggle="collapse" data-bs-target="#delete-q"
+            aria-expanded="false" aria-controls="collapseWidthExample">
+            Delete a Question
+        </button>
+    </p>
+    <div style="min-height: 50px;">
+        <div class="collapse collapse-horizontal" id="delete-q">
+            <div class="card card-body">
+                <form class="add-event-form" action="/delq" method="POST">
+                    <div class="form-group row" hidden>
+                        <label for="event_name" class="col-sm-2 col-form-label">Event Title/Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="event_name" placeholder="Event Name"
+                                name="event_name" value="<%=event.event_name%>">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="question" class="col-sm-2 col-form-label">Question</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="question" placeholder="question"
+                                name="question">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-primary add add-q-submit">Delete</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- JQuery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/quiz.js" type="text/javascript"></script>
+<%- include('partials/footer') %>

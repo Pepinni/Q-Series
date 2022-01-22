@@ -251,6 +251,29 @@ app.post('/register', function(req,res){
   })
 })
 
+app.post("/manage", function(req,res){
+  const event_name = req.body.event_name;
+
+  if(req.isAuthenticated()){
+    const name = req.user.name;
+    for(var i = 0; i<name.length; i++){
+      if(name[i] === " "){
+        break;
+      }
+    };
+    var studentName = _.upperFirst(name.substr(0,i));
+
+    Event.findOne({event_name : event_name}, function(err,found){
+      if(err){
+        console.log(err);
+        res.redirect('/account');
+      }
+      else{
+        res.render("manage", {name:studentName, user:req.user, event:found});
+      }
+    })
+  }
+})
 // Add Questions to an event
 app.post('/addq', function(req,res){
   console.log(req.body);

@@ -126,7 +126,7 @@ button:not(.navbar-toggler, .sub-btn, .add){
 }
 
 /* Add Event */
-#add-event{
+#add-event, #add-q, #del-q{
     text-align: center;
     margin:auto;
     padding: 0px 50px 0 50px;
@@ -137,14 +137,20 @@ button:not(.navbar-toggler, .sub-btn, .add){
     /* margin-left:100px; */
     margin: 30px auto;
 }
-#del-event{
+/* #del-event{
     margin:auto;
     padding: 0 50px 0px 50px;
-}
-.add-event-btn-container{
+} */
+.add-event-btn-container, .add-q-btn-container{
     text-align: center;
     margin:auto;
 }
+.add-event-submit, .add-q-submit{
+    margin-top: 10px;
+}
+
+/* Manage a created Event */
+
 /* footer */
 @import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap');
 footer{
