@@ -43,8 +43,8 @@ $.get(path, function (DATA) {
 
     // Changing the values in DOM
     const hrs = $(".hours");
-    const mins = $(".minutes");
-    const secs = $(".seconds");
+    const mins = $(".mins");
+    const secs = $(".secs");
     const items = [hrs, mins, secs];
     const values = [hours, minutes, seconds];
     function format(item) {

@@ -1,15 +1,15 @@
 <%- include('partials/header') %>
-
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap');
+</style>
 <div class="container-fluid">
   <div class="event-title"><%=event.event_name %></div>
 
   <div class="timer-box">
     <div class="timer">
-      <span class="hours">10</span>
-      <span> : </span>
-      <span class="minutes">20</span>
-      <span> : </span>
-      <span class="seconds">33 </span>
+      <div class="timer-hours"><span class="hours">h</span>h</div>
+      <div class="timer-minutes"><span class="mins">m</span>m</div>
+      <div class="timer-seconds"><span class="secs">s</span>s</div>
     </div>
   </div>
 

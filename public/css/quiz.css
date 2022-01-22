@@ -13,12 +13,6 @@
     margin-bottom: 200px;
 }
 
-.timer-box{
-    /* overflow:visible; */
-    /* position: sticky; */
-    /* top:30px; */
-    width:20%;
-}
 @media only screen and (max-width:768px){
     .event-title{
         font-family: 'Dongle', Verdana;
@@ -33,29 +27,43 @@
         margin-bottom: 200px;
     }
 }
+.timer-box{
+    margin-left:120px;
+}
 .timer{
-    border:solid;
-    width:90%;
     margin-left:auto;
     text-align: center;
     font-family: 'Orbitron';
     font-size: 30px;
+    /* color:#fff; */
+}
+.timer-hours, .timer-minutes, .timer-seconds{
+    float:left;
+    background-color: #fff;
+    padding:0 5px;
+    margin:0 2px;
+    width:100px;
+    border-style: solid;
+    border-color: orangered;
 }
 
 .question{
     font-size: 30px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Slabo 27px', serif;
 }
 .q-block{
     padding: 20px 20px 20px 20px;
     margin : 0px 50px 40px 50px;
     border-style: solid;
-    border-width: 2px;
+    border-color: orangered;
+    border-width: 3px;
     border-radius: 30px;
+    background-color: #fff;
+    font-family: 'Slabo 27px', serif;
 }
 .opts{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 25px;
+    font-family: 'Slabo 27px', serif;
+    font-size: 20px;
     margin-top: 10px;
 }
 .for-button{
