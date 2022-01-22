@@ -304,6 +304,25 @@ app.post('/addq', function(req,res){
   })
 })
 
+// Delete a question from the quiz
+app.post("/delq", function(req,res){
+  const event_name = req.body.event_name;
+  Event.updateOne({event_name:event_name}, 
+    {
+      $pull : {
+        questions : {question: req.body.question}
+      }
+    },
+     function(err){
+       if(err) console.log(err);
+       else{
+         console.log("Object removed");
+         res.redirect("/account");
+       }
+    }
+  );
+})
+
 // Attempt the Quiz
 app.post('/start', function(req,res){
   const event_name = req.body.event_name;
