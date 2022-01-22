@@ -148,5 +148,5 @@ footer{
     font-family: 'Sedgwick Ave', cursive;
     color: white;
     font-size: 20px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }

@@ -6,31 +6,19 @@
     font-family: 'Dongle', Verdana;
 }
 
-/* .quiz-form{
-    height:40%;
-    width:80%;
-    position:fixed;
-    right:0;
-    overflow: auto;
-    z-index:1;
-} */
 .quiz-form{
     width:60%;
     float: right;
     margin-right: 10%;
     margin-bottom: 200px;
 }
-.container-fluid{
-    overflow:visible;
-}
-.timer-box{
-    /* height:70%; */
-    width:20%;
-    position:sticky;
-    top : 30px;
-    z-index:1;
-}
 
+.timer-box{
+    /* overflow:visible; */
+    /* position: sticky; */
+    /* top:30px; */
+    width:20%;
+}
 @media only screen and (max-width:768px){
     .event-title{
         font-family: 'Dongle', Verdana;

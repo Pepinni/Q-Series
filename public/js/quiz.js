@@ -69,12 +69,12 @@ $.get(path, function (DATA) {
   getRemainingTime();
 });
 
-// $(window).scroll(function () {
-//   var windowPos = $(window).scrollTop();
-//   if(windowPos > 100){
-//     $(".timer-box").stop().animate({top: "30px"},500);
-//   }else{
-//     $(".timer-box").stop().animate({top :"200px"},500, "linear");
-//   }
-//   console.log($(window).scrollTop());
-// });
+$(window).scroll(function () {
+  var windowPos = $(window).scrollTop();
+  if(windowPos > 100){
+    $(".timer-box").css("position","fixed");
+    $(".timer-box").css("top","50px");
+  }else{
+    $(".timer-box").css("position","static");
+  }
+});
