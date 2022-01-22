@@ -1,6 +1,3 @@
-.main-box{
-    /* min-height: 100; */
-}
 .event-title{
     margin:auto;
     padding : 0 50px 0 50px;
@@ -9,20 +6,28 @@
     font-family: 'Dongle', Verdana;
 }
 
-.quiz-form{
+/* .quiz-form{
     height:40%;
     width:80%;
     position:fixed;
     right:0;
     overflow: auto;
     z-index:1;
+} */
+.quiz-form{
+    width:60%;
+    float: right;
+    margin-right: 10%;
+    margin-bottom: 200px;
 }
-
+.container-fluid{
+    overflow:visible;
+}
 .timer-box{
-    height:70%;
+    /* height:70%; */
     width:20%;
-    position:fixed;
-    left:0;
+    position:sticky;
+    top : 30px;
     z-index:1;
 }
 
@@ -30,13 +35,14 @@
     .event-title{
         font-family: 'Dongle', Verdana;
     }
-    .quiz-form{
-        width:100%;
-        position:static;
-    }
     .timer-box{
         width:100%;
         position:static;
+    }
+    .quiz-form{
+        width:99%;
+        margin:auto;
+        margin-bottom: 200px;
     }
 }
 .timer{
