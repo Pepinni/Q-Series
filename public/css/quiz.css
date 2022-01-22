@@ -13,20 +13,6 @@
     margin-bottom: 200px;
 }
 
-@media only screen and (max-width:768px){
-    .event-title{
-        font-family: 'Dongle', Verdana;
-    }
-    .timer-box{
-        width:100%;
-        position:static;
-    }
-    .quiz-form{
-        width:99%;
-        margin:auto;
-        margin-bottom: 200px;
-    }
-}
 .timer-box{
     margin-left:120px;
 }
@@ -73,4 +59,34 @@
 .sub-btn{
     font-size: 25px;
     border-radius: 20px;
+}
+
+@media only screen and (max-width:768px){
+    .event-title{
+        font-family: 'Dongle', Verdana;
+    }
+    .timer-box{
+        margin:0 0 40px 90px;
+    }
+    .quiz-form{
+        width:99%;
+        margin:auto;
+        margin-bottom: 200px;
+    }
+    .timer-hours, .timer-minutes, .timer-seconds{
+        /* float:left; */
+        background-color: #fff;
+        padding:0 5px;
+        margin:0 2px;
+        width:50px;
+        border-style: solid;
+        border-color: orangered;
+        font-size: 15px;
+    }
+    .question{
+        font-size: 20px;
+    }
+    .opts{
+        font-size: 15px;
+    }
 }

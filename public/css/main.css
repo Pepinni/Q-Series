@@ -89,16 +89,17 @@ hr:not([size]){
     font-family: 'Orbitron';
     font-size: 20px;
 }
-button:not(.navbar-toggler, .sub-btn){
+button:not(.navbar-toggler, .sub-btn, .add){
     position:absolute;
     right:0;
     bottom:0px;
 }
+
 @media only screen and (max-width:767px){
     .tests{
         font-size: 40px;
     }
-    button:not(.navbar-toggler){
+    button:not(.navbar-toggler, .add){
         position:static;
         /* width:60px; */
         /* height:30px; */
@@ -126,14 +127,24 @@ button:not(.navbar-toggler, .sub-btn){
 
 /* Add Event */
 #add-event{
+    text-align: center;
     margin:auto;
     padding: 0px 50px 0 50px;
+}
+.add-event-form{
+    width:80%;
+    text-align: center;
+    /* margin-left:100px; */
+    margin: 30px auto;
 }
 #del-event{
     margin:auto;
     padding: 0 50px 0px 50px;
 }
-
+.add-event-btn-container{
+    text-align: center;
+    margin:auto;
+}
 /* footer */
 @import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap');
 footer{

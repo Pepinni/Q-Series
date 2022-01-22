@@ -22,27 +22,30 @@
                 <h3 class="startDate">
                     <%= event.startDate.toLocaleString(); %>
                 </h3>
-                <form class="register" action="/delevent" method="POST">
+                <!-- <form class="register" action="/delevent" method="POST">
                     <input type="text" name="event_name" value="<%=event.event_name%>" hidden>
                     <button type="submit" class="btn btn-outline-danger">Delete This Event</button>
+                </form> -->
+                <form class="manage" action="/manage" method="POST">
+                    <input type="text" name="event_name" value="<%=event.event_name%>" hidden>
+                    <button type="submit" class="btn btn-outline-danger">Manage Event</button>
                 </form>
             </div>
         </div>
     </div>
     <%});%>
 </section>
-
 <!-- Creating event -->
 <section id="add-event">
-    <p>
-        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#add"
+    <p class="add-event-btn-container">
+        <button class="btn btn-outline-danger add" type="button" data-bs-toggle="collapse" data-bs-target="#add"
             aria-expanded="false" aria-controls="collapseWidthExample">
             Add Event
         </button>
     </p>
-    <div style="min-height: 50px;">
+    <div style="min-height: 50px;" class="add-event-form">
         <div class="collapse collapse-horizontal" id="add">
-            <div class="card card-body" style="width: 900px;">
+            <div class="card card-body" >
                 <form class="add-event-form" action="addevent" method="POST">
                     <div class="form-group row">
                         <label for="event_name" class="col-sm-2 col-form-label">Event Title/Name</label>
@@ -81,7 +84,7 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-sm-10">
-                            <button type="submit" class="btn btn-primary">Add</button>
+                            <button type="submit" class="btn btn-primary add">Add</button>
                         </div>
                     </div>
                 </form>
