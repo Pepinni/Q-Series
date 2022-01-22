@@ -1,17 +1,20 @@
+.main-box{
+    /* min-height: 100; */
+}
 .event-title{
     margin:auto;
     padding : 0 50px 0 50px;
     font-size:50px;
     text-align: center;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Dongle', Verdana;
 }
 
 .quiz-form{
-    height:70%;
+    height:40%;
     width:80%;
     position:fixed;
     right:0;
-    overflow-x: auto;
+    overflow: auto;
     z-index:1;
 }
 
@@ -23,6 +26,19 @@
     z-index:1;
 }
 
+@media only screen and (max-width:768px){
+    .event-title{
+        font-family: 'Dongle', Verdana;
+    }
+    .quiz-form{
+        width:100%;
+        position:static;
+    }
+    .timer-box{
+        width:100%;
+        position:static;
+    }
+}
 .timer{
     border:solid;
     width:90%;

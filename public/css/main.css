@@ -1,9 +1,14 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
 body{
     background-color: #eec0c6;
     background-image: linear-gradient(315deg, #eec0c6 0%, #7ee8fa 74%);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    margin:0 0 200px;
 }
 
 hr:not([size]){
@@ -16,9 +21,10 @@ hr:not([size]){
 
 /* Navbar */
 #title, #events{
-    padding: 5px 90px 10px 90px;
+    padding: 0 90px 0 90px;
     color:black;
     font-size: 15px;
+    margin-bottom: 50px;
 }
 #title{
     background-color: #f7b42c;
@@ -45,11 +51,9 @@ hr:not([size]){
     }
 }
 /* Events */
-@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@700&display=swap');
 .tests{
     text-align: center;
-    /* font-family: 'Dongle', Verdana; */
-    font-family: 'Dongle', sans-serif;
+    font-family: 'Dongle', Verdana;
     font-weight: bolder;
     font-size: 60px;
 }
@@ -85,16 +89,22 @@ hr:not([size]){
     font-family: 'Orbitron';
     font-size: 20px;
 }
-button:not([navbar-toggler]){
+button:not(.navbar-toggler, .sub-btn){
     position:absolute;
     right:0;
     bottom:0px;
 }
 @media only screen and (max-width:767px){
+    .tests{
+        font-size: 40px;
+    }
     button:not(.navbar-toggler){
-        position:absolute;
-        right:20px;
-        bottom:-35px;
+        position:static;
+        /* width:60px; */
+        /* height:30px; */
+        font-size: 12px;
+        margin:auto;
+
     }
     .quiz-flyer{
         width:100%;
@@ -108,6 +118,9 @@ button:not([navbar-toggler]){
     .event-name{
         font-size: 30px;
     }
+    #events{
+        margin-bottom: 60px;
+    }
 
 }
 
@@ -119,4 +132,21 @@ button:not([navbar-toggler]){
 #del-event{
     margin:auto;
     padding: 0 50px 0px 50px;
+}
+
+/* footer */
+@import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap');
+footer{
+    position: absolute;
+    bottom:0;
+    color: red;
+    text-align: center;
+    width:100%;
+    padding:30px 0 30px 0;
+    background-color: #f7b42c;
+    background-image: linear-gradient(315deg, #f7b42c 0%, #fc575e 74%);
+    font-family: 'Sedgwick Ave', cursive;
+    color: white;
+    font-size: 20px;
+    overflow: hidden;
 }
