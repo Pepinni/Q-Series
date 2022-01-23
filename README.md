@@ -49,14 +49,13 @@ If you want to host a test on QSeries the following steps can be followed to get
 
 **Installation**
 
-
 1. Fork the repo and clone it to your local machine.
 
->     git clone https://github.com/**you**/Q-Series.git
+> git clone https://github.com/**you**/Q-Series.git
 
 2. Run the following command to install all the dependencies
 
->     npm install
+> npm install
 
 3. Login to the google developer console and create a new project with name Q Series
 4. Create a new OAuth 2.0 client id inside the project Q Series and name it Q-Series. Then set the following properties
@@ -110,6 +109,18 @@ If you want to host a test on QSeries the following steps can be followed to get
    4. View his/her score for an attemted quiz.
 
 ---
+
+### Contributing
+
+This is an ongoing project until I put it here otherwise.
+
+Any contribution, big or small is appreciated. Follow the below steps to start contributing:
+
+1. Fork the project
+2. Create your own feature branch `(git checkout -b myFeature)`
+3. Commit your changes (`git commit -m 'Added a feature'`)
+4. Push to remote (`git push origin myFeature`)
+5. Open a pull request.
 
 ### Contact
 
