@@ -5,13 +5,13 @@
 Table of Contents
 
 * [About](#about)
+  * [Tech Stack](#tech-stack)
+  * [Tools and Services](#tools-and-services-used)
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
 * [Usage](#usage)
-* Roadmap
 * [Contributing](#contributing)
-* License
 * [Contact](#contact)
 
 ---
@@ -20,14 +20,14 @@ Table of Contents
 
 QSeries is a wep application which can be used to conduct MCQ (multiple choice questions) quizes. With the entirety of education and exams dependent on online tools, this application is here to give test host and test takers a personalized feel. The application is responsive and hence works well with mobile and desktop devices alike.
 
-**Tech Stack:**
+#### **Tech Stack:**
 
 * NodeJS
 * Bootstrap
 * JQuery
 * MongoDB
 
-**Tools and Services Used:**
+#### **Tools and Services Used:**
 
 * Git/Github
 * Google Developer Console
@@ -41,13 +41,13 @@ QSeries is a wep application which can be used to conduct MCQ (multiple choice q
 
 If you want to host a test on QSeries the following steps can be followed to get started
 
-###### **Prerequisites**
+#### **Prerequisites**
 
 1. MongoDB installed.
 2. NodeJS installed.
 3. Google account
 
-###### **Installation**
+#### **Installation**
 
 1. Fork the repo and clone it to your local machine.
 
@@ -96,13 +96,19 @@ If you want to host a test on QSeries the following steps can be followed to get
 	}
 ```
 
-2. You login with the host's gmail-ID, you will be taken to the admin page. The administrator has the following functionalities in control:
+2. Type in the following command in the terminal to start the database server.
+
+   > mongod
+   >
+3. You login with the host's gmail-ID, you will be taken to the admin page. The administrator has the following functionalities in control:
+
    1. Add a new Quiz.
    2. Add and delete questions corresponding to a Quiz.
    3. Modify the particulars of a Quiz.
    4. View an existing Quiz.
    5. Delete a Quiz.
-3. A test taker has the following functionalities in control:
+4. A test taker has the following functionalities in control:
+
    1. Login with any gmail-ID.
    2. Regsiter for a Quiz.
    3. Attempt a quiz at the set time.
