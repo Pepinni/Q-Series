@@ -1,71 +1,71 @@
 <%- include('partials/header') %>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap');
 </style>
 <div class="container-fluid">
-  <div class="event-title"><%=event.event_name %></div>
+    <div class="event-title"><%=event.event_name %></div>
 
-  <div class="timer-box">
-    <div class="timer">
-      <div class="timer-hours"><span class="hours">h</span>h</div>
-      <div class="timer-minutes"><span class="mins">m</span>m</div>
-      <div class="timer-seconds"><span class="secs">s</span>s</div>
+    <div class="timer-box">
+        <div class="timer">
+            <div class="timer-hours"><span class="hours">h</span>h</div>
+            <div class="timer-minutes"><span class="mins">m</span>m</div>
+            <div class="timer-seconds"><span class="secs">s</span>s</div>
+        </div>
     </div>
-  </div>
 
-  <!-- Questions in the quiz -->
-  <form class="quiz-form" method="POST">
-    <% for(var i=0; i < event.questions.length; i++){ %>
-    <div class="q-block">
-      <p class="question">
-        <%=event.questions[i].question%>
-      </p>
-      <hr>
-      <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-12 opts">
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="<%= " ans_" + i + "ans" %>" value="A" id="<%= i
+    <!-- Questions in the quiz -->
+    <form class="quiz-form" method="POST">
+        <% for(var i=0; i < event.questions.length; i++){ %>
+        <div class="q-block">
+            <p class="question">
+                <%=event.questions[i].question%>
+            </p>
+            <hr>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 opts">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="<%= " ans_" + i + "ans" %>" value="A" id="<%= i
                   + " o1" %>">
-            <label class="form-check-label" for="<%= i + " o1" %>">
-              <%=event.questions[i].option_a%>
-            </label>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 opts">
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="<%= " ans_" + i + "ans" %>" value="B" id="<%= i
+                        <label class="form-check-label" for="<%= i + " o1" %>">
+                            <%=event.questions[i].option_a%>
+                        </label>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 opts">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="<%= " ans_" + i + "ans" %>" value="B" id="<%= i
                   + " o2" %>">
-            <label class="form-check-label" for="<%= i + " o2" %>">
-              <%=event.questions[i].option_b%>
-            </label>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 opts">
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="<%= " ans_" + i + "ans" %>" value="C" id="<%= i
+                        <label class="form-check-label" for="<%= i + " o2" %>">
+                            <%=event.questions[i].option_b%>
+                        </label>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 opts">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="<%= " ans_" + i + "ans" %>" value="C" id="<%= i
                   + " o3" %>">
-            <label class="form-check-label" for="<%= i + " o3" %>">
-              <%=event.questions[i].option_c%>
-            </label>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 opts">
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="<%= " ans_" + i + "ans" %>" value="D" id="<%= i
+                        <label class="form-check-label" for="<%= i + " o3" %>">
+                            <%=event.questions[i].option_c%>
+                        </label>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 opts">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="<%= " ans_" + i + "ans" %>" value="D" id="<%= i
                   + " o4" %>">
-            <label class="form-check-label" for="<%= i + " o4" %>">
-              <%=event.questions[i].option_d%>
-            </label>
-          </div>
+                        <label class="form-check-label" for="<%= i + " o4" %>">
+                            <%=event.questions[i].option_d%>
+                        </label>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <% } %>
-    <div class="for-button">
-      <button type="submit" class="btn btn-outline-danger sub-btn" disabled>Submit</button>
-    </div>
+        <% } %>
+        <div class="for-button">
+            <button type="submit" class="btn btn-outline-danger sub-btn" disabled>Submit</button>
+        </div>
 
-  </form>
+    </form>
 </div>
 
 <!-- Add Question in the quiz -->
@@ -163,8 +163,8 @@
 <!-- Delete a set Question in the quiz -->
 <section id="del-q">
     <p class="add-q-btn-container">
-        <button class="btn btn-outline-danger add" type="button" data-bs-toggle="collapse" data-bs-target="#delete-q"
-            aria-expanded="false" aria-controls="collapseWidthExample">
+        <button class="btn btn-outline-danger add del-q-btn" type="button" data-bs-toggle="collapse"
+            data-bs-target="#delete-q" aria-expanded="false" aria-controls="collapseWidthExample">
             Delete a Question
         </button>
     </p>
@@ -192,6 +192,92 @@
                         </div>
                     </div>
                 </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Edit this quiz details -->
+<section id="edit-event">
+    <p class="add-event-btn-container">
+        <button class="btn btn-outline-danger add edit-event-btn" type="button" data-bs-toggle="collapse"
+            data-bs-target="#edit" aria-expanded="false" aria-controls="collapseWidthExample">
+            Edit Event
+        </button>
+    </p>
+    <div style="min-height: 50px;" class="add-event-form">
+        <div class="collapse collapse-horizontal" id="edit">
+            <div class="card card-body">
+                <form class="add-event-form" action="edit" method="POST">
+                    <div class="form-group row" hidden>
+                        <label for="event_name" class="col-sm-2 col-form-label">Event Title/Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="event_name" placeholder="Event Name"
+                                name="event_name" value="<%=event.event_name%>">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="event_description" class="col-sm-2 col-form-label">Describe your event</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="event_description"
+                                placeholder="Event Description" name="event_description">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="startDate" class="col-sm-2 col-form-label">Tentative start date</label>
+                        <div class="col-sm-10">
+                            <input type="datetime-local" class="form-control" id="startDate" placeholder="Date"
+                                name="startDate">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="endDate" class="col-sm-2 col-form-label">Tentative end date</label>
+                        <div class="col-sm-10">
+                            <input type="datetime-local" class="form-control" id="endDate" placeholder="Date"
+                                name="endDate">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="Date" class="col-sm-2 col-form-label">Event Banner link</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="Date" placeholder="link to the banner image"
+                                name="link">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-primary add add-event-submit">Edit Event</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Delete Event -->
+<section id="add-event">
+    <p class="add-event-btn-container">
+        <button type="button" class="btn btn-outline-danger add edit-event-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Delete Event
+        </button>
+    </p>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Confirm</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ARE YOU SURE YOU WANT TO DELETE THIS EVENT
+                </div>
+                <div class="modal-footer">
+                    <form class="register" action="/delevent" method="POST">
+                        <input type="text" name="event_name" value="<%=event.event_name%>" hidden>
+                        <button type="submit" class="btn btn-primary add add-event-submit">Delete This Event</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

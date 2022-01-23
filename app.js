@@ -323,6 +323,25 @@ app.post("/delq", function(req,res){
   );
 })
 
+// Edit an Event
+app.post('/edit',function(req,res){
+  Event.findOne({event_name:req.body.event_name}, function(err, found){
+    if(err){
+      console.log(err);
+      res.redirect("/account");
+    }
+    else{
+      console.log(found);
+      found.event_description = req.body.event_description;
+      found.startDate = req.body.startDate;
+      found.endDate = req.body.endDate;
+      found.event_banner = req.body.link;
+      found.save();
+      res.redirect("/account");
+    }
+  })
+})
+
 // Attempt the Quiz
 app.post('/start', function(req,res){
   const event_name = req.body.event_name;

@@ -137,10 +137,7 @@ button:not(.navbar-toggler, .sub-btn, .add){
     /* margin-left:100px; */
     margin: 30px auto;
 }
-/* #del-event{
-    margin:auto;
-    padding: 0 50px 0px 50px;
-} */
+
 .add-event-btn-container, .add-q-btn-container{
     text-align: center;
     margin:auto;
@@ -150,6 +147,12 @@ button:not(.navbar-toggler, .sub-btn, .add){
 }
 
 /* Manage a created Event */
+.del-q-btn{
+    margin-top:-50px;
+}
+.edit-event-btn{
+    margin-top: -80px;
+}
 
 /* footer */
 @import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap');
