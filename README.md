@@ -4,19 +4,19 @@
 
 Table of Contents
 
-* About the Project
-* Getting Started
-  * Prerequisites
-  * Installations
-* Usage
+* [About](#about)
+* [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
+  * [Installation](#installation)
+* [Usage](#usage)
 * Roadmap
-* Contributing
+* [Contributing](#contributing)
 * License
-* Contact
+* [Contact](#contact)
 
 ---
 
-### About the Project
+### About
 
 QSeries is a wep application which can be used to conduct MCQ (multiple choice questions) quizes. With the entirety of education and exams dependent on online tools, this application is here to give test host and test takers a personalized feel. The application is responsive and hence works well with mobile and desktop devices alike.
 
@@ -41,13 +41,13 @@ QSeries is a wep application which can be used to conduct MCQ (multiple choice q
 
 If you want to host a test on QSeries the following steps can be followed to get started
 
-**Prerequisites**
+###### **Prerequisites**
 
 1. MongoDB installed.
 2. NodeJS installed.
 3. Google account
 
-**Installation**
+###### **Installation**
 
 1. Fork the repo and clone it to your local machine.
 
