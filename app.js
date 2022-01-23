@@ -11,7 +11,6 @@ const _ = require('lodash');
 const moment = require("moment");
 require('https').globalAgent.options.rejectUnauthorized = false;
 const mongoStore = require("connect-mongo");
-// const MongoStore = require("mongo-store");
 
 ///////   Dependency requirements above    ///////
 
@@ -32,9 +31,8 @@ app.use(session({
 app.use(passport.initialize()); 
 app.use(passport.session());
 
-mongoose.connect("mongodb://localhost:27017/QSeries", {useNewUrlParser: true,useUnifiedTopology: true,});
-// mongoose.connect(String(process.env.PASS),{ useNewUrlParser: true , useUnifiedTopology: true});
-// mongoose.set('useCreateIndex', true);
+mongoose.connect("mongodb://localhost:27017/QSeries", {useNewUrlParser: true,useUnifiedTopology: true,}); //Running on localhost
+// mongoose.connect(String(process.env.PASS),{ useNewUrlParser: true , useUnifiedTopology: true}); // Running on a remote server
 
 
 /////////       Schema Creation       //////////
@@ -71,7 +69,6 @@ const questionSchema = new mongoose.Schema({
 const eventSchema = new mongoose.Schema({
     event_name : String,
     event_description: String,
-    // date : Date,
     startDate : Date,
     endDate : Date,
     event_banner : String,
@@ -124,7 +121,7 @@ passport.use(new GoogleStrategy({
 ));
 
 ////////////////////////////////////////////////
-//////            Get Routes         //////////
+//////            GET Routes         //////////
 ////////////////////////////////////////////////
 app.get('/', function(req,res){
   res.render('home');
@@ -184,6 +181,7 @@ app.get('/timer/:paramID', function(req,res){
     }
   })
 })
+
 ////////////////////////////////////////////////
 ///////       Post Methods        //////////
 ////////////////////////////////////////////////
@@ -251,6 +249,7 @@ app.post('/register', function(req,res){
   })
 })
 
+// Manage a scheduled event
 app.post("/manage", function(req,res){
   const event_name = req.body.event_name;
 
@@ -274,6 +273,7 @@ app.post("/manage", function(req,res){
     })
   }
 })
+
 // Add Questions to an event
 app.post('/addq', function(req,res){
   console.log(req.body);
@@ -367,6 +367,7 @@ app.post('/start', function(req,res){
   }
 });
 
+// Submitting the quiz
 app.post('/quizsubmit', function(req,res){
   if(req.isAuthenticated()){
     User.findById(req.user._id, function(err,user){
@@ -407,6 +408,8 @@ app.get('/logout', function(req,res){
   req.logout();
   res.redirect('/');
 })
+
+
 app.listen(process.env.PORT || 3000, function(){
   console.log("Server running on port 3000" );
 });

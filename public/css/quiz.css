@@ -8,7 +8,6 @@
 
 .quiz-form{
     width:60%;
-    /* float: right; */
     margin-left: 30%;
     margin-bottom: 100px;
 }
@@ -21,7 +20,6 @@
     text-align: center;
     font-family: 'Orbitron';
     font-size: 30px;
-    /* color:#fff; */
 }
 .timer-hours, .timer-minutes, .timer-seconds{
     float:left;
@@ -74,7 +72,6 @@
         margin-bottom: 200px;
     }
     .timer-hours, .timer-minutes, .timer-seconds{
-        /* float:left; */
         background-color: #fff;
         padding:0 5px;
         margin:0 2px;

@@ -1,10 +1,9 @@
 <%- include('partials/header') %>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap');
-</style>
+
 <div class="container-fluid">
     <div class="event-title"><%=event.event_name %></div>
 
+    <!-- Implementing a timer for the quiz -->
     <div class="timer-box">
         <div class="timer">
             <div class="timer-hours"><span class="hours">h</span>h</div>
@@ -68,7 +67,7 @@
     </form>
 </div>
 
-<!-- Add Question in the quiz -->
+<!-- Add Question in this particular quiz -->
 <section id="add-q">
     <p class="add-q-btn-container">
         <button class="btn btn-outline-danger add" type="button" data-bs-toggle="collapse" data-bs-target="#delete"
@@ -160,7 +159,7 @@
     </div>
 </section>
 
-<!-- Delete a set Question in the quiz -->
+<!-- Delete a set Question in this parrticular quiz -->
 <section id="del-q">
     <p class="add-q-btn-container">
         <button class="btn btn-outline-danger add del-q-btn" type="button" data-bs-toggle="collapse"
@@ -197,7 +196,7 @@
     </div>
 </section>
 
-<!-- Edit this quiz details -->
+<!-- Edit this quiz's details (Description,start/end dates, banner) -->
 <section id="edit-event">
     <p class="add-event-btn-container">
         <button class="btn btn-outline-danger add edit-event-btn" type="button" data-bs-toggle="collapse"
@@ -258,7 +257,8 @@
 <!-- Delete Event -->
 <section id="add-event">
     <p class="add-event-btn-container">
-        <button type="button" class="btn btn-outline-danger add edit-event-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <button type="button" class="btn btn-outline-danger add edit-event-btn" data-bs-toggle="modal"
+            data-bs-target="#exampleModal">
             Delete Event
         </button>
     </p>
@@ -270,19 +270,17 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    ARE YOU SURE YOU WANT TO DELETE THIS EVENT
+                    ARE YOU SURE YOU WANT TO DELETE THIS EVENT? Once done the action can not be reversed!
                 </div>
                 <div class="modal-footer">
                     <form class="register" action="/delevent" method="POST">
                         <input type="text" name="event_name" value="<%=event.event_name%>" hidden>
-                        <button type="submit" class="btn btn-primary add add-event-submit">Delete This Event</button>
+                        <button type="submit" class="btn btn-outline-danger add add-event-submit">Delete This Event</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!-- JQuery CDN -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="js/quiz.js" type="text/javascript"></script>
+
 <%- include('partials/footer') %>

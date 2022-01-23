@@ -1,10 +1,10 @@
 <%- include('partials/header') %>
-<!-- Events -->
+
+<!-- Showing all the scheduled events, both, registered or not -->
 <section id="events">
     <h1 class="tests">Your Tests!</h1>
-    <!-- <hr> -->
     <% event.forEach(function(event){ %>
-    <div class="container-fluid quiz-flyer" style="margin-top:20px;" >
+    <div class="container-fluid quiz-flyer" style="margin-top:20px;">
         <div class="row">
             <div class="col-lg-2 col-md-2 col-sm-12 ">
                 <img src="<%= event.event_banner %>" class="event-pic">

@@ -101,17 +101,13 @@ button:not(.navbar-toggler, .sub-btn, .add){
     }
     button:not(.navbar-toggler, .add){
         position:static;
-        /* width:60px; */
-        /* height:30px; */
         font-size: 12px;
         margin:auto;
-
     }
     .quiz-flyer{
         width:100%;
         text-align: center;
         padding:40px 40px 40px 0px;
-
     }
     .startDate, .event-description{
         font-size: 10px;
@@ -134,7 +130,6 @@ button:not(.navbar-toggler, .sub-btn, .add){
 .add-event-form{
     width:80%;
     text-align: center;
-    /* margin-left:100px; */
     margin: 30px auto;
 }
 
@@ -168,5 +163,4 @@ footer{
     font-family: 'Sedgwick Ave', cursive;
     color: white;
     font-size: 20px;
-    /* overflow: hidden; */
 }

@@ -1,11 +1,8 @@
 <%- include('partials/header') %>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@700&display=swap');
-</style>
-<!-- Events -->
+
+<!-- Showing all events -->
 <section id="events">
     <h1 class="tests">Your Tests!</h1>
-    <!-- <hr> -->
     <% event.forEach(function(event){ %>
     <div class="container-fluid quiz-flyer" style="margin-top:20px;">
         <div class="row">
@@ -22,10 +19,6 @@
                 <h3 class="startDate">
                     <%= event.startDate.toLocaleString(); %>
                 </h3>
-                <!-- <form class="register" action="/delevent" method="POST">
-                    <input type="text" name="event_name" value="<%=event.event_name%>" hidden>
-                    <button type="submit" class="btn btn-outline-danger">Delete This Event</button>
-                </form> -->
                 <form class="manage" action="/manage" method="POST">
                     <input type="text" name="event_name" value="<%=event.event_name%>" hidden>
                     <button type="submit" class="btn btn-outline-danger">Manage Event</button>
@@ -35,6 +28,7 @@
     </div>
     <%});%>
 </section>
+
 <!-- Creating event -->
 <section id="add-event">
     <p class="add-event-btn-container">
@@ -45,7 +39,7 @@
     </p>
     <div style="min-height: 50px;" class="add-event-form">
         <div class="collapse collapse-horizontal" id="add">
-            <div class="card card-body" >
+            <div class="card card-body">
                 <form class="add-event-form" action="addevent" method="POST">
                     <div class="form-group row">
                         <label for="event_name" class="col-sm-2 col-form-label">Event Title/Name</label>

@@ -1,32 +1,12 @@
+// Code to enable the timer
 const event_name = $(".event-title").text();
 const path = "/timer/" + String(event_name);
 
 $.get(path, function (DATA) {
   const startDate = DATA.startDate;
   const endDate = DATA.endDate;
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-  const weekdays = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
+  const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  const weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
   let ed = new Date(endDate);
 
@@ -54,7 +34,6 @@ $.get(path, function (DATA) {
       return item;
     }
     items.forEach(function (item, index) {
-      // item.innerHTML = format(values[index]);
       item.html(format(values[index]));
     });
 
@@ -69,6 +48,7 @@ $.get(path, function (DATA) {
   getRemainingTime();
 });
 
+// Code to clip the timer box in sight on scroll
 $(window).scroll(function () {
   var windowPos = $(window).scrollTop();
   if(windowPos > 100){
