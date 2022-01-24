@@ -19,7 +19,16 @@
                 <h3 class="startDate">
                     <%= event.startDate.toLocaleString(); %>
                 </h3>
-                <%if(user.registration.event_name !==event.event_name){%>
+                <% var isRegistered=false; %> 
+                <% var index = 0; %> 
+                <% for( let i = 0; i < user.registration.length; i++ ) { %>
+                    <% if (user.registration[i].event_name === event.event_name) { %>
+                           <% isRegistered = true; %>                   
+                           <% index=i; %> 
+                           <% break; %> 
+                    <% } %>   
+                <% } %>
+                <%if(isRegistered===false){%>
                 <form class="register" action="/register" method="POST">
                     <input type="text" name="event_name" value="<%=event.event_name%>" hidden>
                     <button type="submit" class="btn btn-outline-danger">Register</button>
@@ -29,14 +38,14 @@
                 <%if(present<=event.startDate){%>
                 <button class="btn btn-outline-danger">Registration Complete</button>
                 <%}else{%>
-                <%if(user.registration.ticked.length===0){%>
+                <%if(user.registration[index].ticked.length===0){%>
                 <form class="register" action="/start" method="POST">
                     <input type="text" name="event_name" value="<%=event.event_name%>" hidden>
                     <button type="submit" class="btn btn-outline-danger">Start
                         Test</button>
                 </form>
                 <%}else{%>
-                <h3 class="score">Your Score is <%=user.registration.score%>
+                <h3 class="score">Your Score is <%=user.registration[index].score%>
                 </h3>
                 <%}%>
                 <%}%>

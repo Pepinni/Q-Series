@@ -1,6 +1,7 @@
 app2.js
 test.ejs
 test.html
+event_schema.json
 # Logs
 logs
 *.log
