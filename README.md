@@ -11,14 +11,14 @@ Table of Contents
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
 * [Usage](#usage)
-* [Contributing](#contributing)
+* [Contribut](#contributing)e
 * [Contact](#contact)
 
 ---
 
 ### About
 
-QSeries is a wep application which can be used to conduct MCQ (multiple choice questions) quizes. With the entirety of education and exams dependent on online tools, this application is here to give test host and test takers a personalized feel. The application is responsive and hence works well with mobile and desktop devices alike.
+QSeries is a web application which can be used to conduct MCQ (multiple choice questions) quizes. With the entirety of education and exams dependent on online tools, this application is here to give test host and test takers a personalized feel. The application is responsive and hence works well with mobile and desktop devices alike.
 
 #### **Tech Stack:**
 
@@ -116,7 +116,7 @@ If you want to host a test on QSeries the following steps can be followed to get
 
 ---
 
-### Contributing
+### Contribute
 
 This is an ongoing project until I put it here otherwise.
 
