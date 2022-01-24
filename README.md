@@ -1,5 +1,7 @@
 # Q-Series
 
+![](image/README/1643041862317.png)
+
 #### An Open Source Quiz conducting platform
 
 Table of Contents
@@ -11,7 +13,7 @@ Table of Contents
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
 * [Usage](#usage)
-* [Contribut](#contributing)e
+* [Contribute](#contribute)
 * [Contact](#contact)
 
 ---
@@ -100,7 +102,7 @@ If you want to host a test on QSeries the following steps can be followed to get
 
    > mongod
    >
-3. You login with the host's gmail-ID, you will be taken to the admin page. The administrator has the following functionalities in control:
+3. When you login with the host's gmail-ID, you will be taken to the admin page. The administrator has the following functionalities in control:
 
    1. Add a new Quiz.
    2. Add and delete questions corresponding to a Quiz.
@@ -109,18 +111,16 @@ If you want to host a test on QSeries the following steps can be followed to get
    5. Delete a Quiz.
 4. A test taker has the following functionalities in control:
 
-   1. Login with any gmail-ID.
+   1. Login with any Gmail-ID.
    2. Regsiter for a Quiz.
-   3. Attempt a quiz at the set time.
+   3. Attempt a quiz at the scheduled time.
    4. View his/her score for an attemted quiz.
 
 ---
 
 ### Contribute
 
-This is an ongoing project until I put it here otherwise.
-
-Any contribution, big or small is appreciated. Follow the below steps to start contributing:
+This is an ongoing project. Any contribution, big or small is appreciated. Follow the below steps to start contributing:
 
 1. Fork the project
 2. Create your own feature branch `(git checkout -b myFeature)`
