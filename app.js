@@ -419,6 +419,39 @@ app.post('/quizsubmit', function(req,res){
   }
 })
 
+// Test host view the results
+app.post("/viewresults", function(req,res){
+  const event_name = req.body.event_name;
+  User.find({}, function(err, found){
+    if(err){
+      console.log(err);
+    }
+    else{
+      const results = [];
+      found.forEach(function(user,index){
+        user.registration.forEach(function(quiz){
+          if(quiz.event_name === event_name){
+            let taker = {
+              name : user.name,
+              email : user.email,
+              score : quiz.score,
+            }
+            results.push(taker);
+          }
+        })
+      })
+      const name = req.user.name;
+      for(var i = 0; i<name.length; i++){
+        if(name[i] === " "){
+          break;
+        }
+      };
+      var studentName = _.upperFirst(name.substr(0,i));
+      res.render("results", {name:studentName, user:req.user, event:event_name, results:results});
+    }
+  })
+})
+
 // Logging out
 app.get('/logout', function(req,res){
   req.logout();
