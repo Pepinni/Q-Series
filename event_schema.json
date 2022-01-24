@@ -1,0 +1,74 @@
+{
+    "_id" : ObjectId("61e93d1d9c28bb26f9d67661"),
+    "event_name" : "DSA Quiz",
+    "event_description" : "I am changing the test description",
+    "startDate" : ISODate("2022-01-23T07:11:00.000Z"),
+    "endDate" : ISODate("2022-01-24T12:11:00.000Z"),
+    "event_banner" : "https://image.shutterstock.com/image-vector/letter-q-logo-template-illustration-260nw-1904834425.jpg",
+    "questions" : [ 
+        {
+            "question" : "This is question 1",
+            "option_a" : "Option a",
+            "option_b" : "Option b",
+            "option_c" : "option c",
+            "option_d" : "option d",
+            "ans" : "C",
+            "_id" : ObjectId("61e93d449c28bb26f9d67674")
+        },
+        {
+            "question" : "This is question 2",
+            "option_a" : "Option a",
+            "option_b" : "Option b",
+            "option_c" : "option c",
+            "option_d" : "option d",
+            "ans" : "C",
+            "_id" : ObjectId("61e93d449c28bb26f9d67674")
+        }, 
+        {
+            "question" : "This is question 3",
+            "option_a" : "Option a",
+            "option_b" : "Option b",
+            "option_c" : "option c",
+            "option_d" : "option d",
+            "ans" : "C",
+            "_id" : ObjectId("61e93d579c28bb26f9d67681")
+        }, 
+        {
+            "question" : "This is question 4",
+            "option_a" : "Option a",
+            "option_b" : "Option b",
+            "option_c" : "option c",
+            "option_d" : "option d",
+            "ans" : "C",
+            "_id" : ObjectId("61e93d679c28bb26f9d67690")
+        }, 
+        {
+            "question" : "This is question 5",
+            "option_a" : "Option a",
+            "option_b" : "Option b",
+            "option_c" : "option c",
+            "option_d" : "option d",
+            "ans" : "C",
+            "_id" : ObjectId("61e93d869c28bb26f9d676a1")
+        }, 
+        {
+            "question" : "This is question 6",
+            "option_a" : "Option a",
+            "option_b" : "Option b",
+            "option_c" : "option c",
+            "option_d" : "option d",
+            "ans" : "C",
+            "_id" : ObjectId("61ec66d12318c8d1d52a460c")
+        }, 
+        {
+            "question" : "Who was the first Prime Minister of India",
+            "option_a" : "George Washington",
+            "option_b" : "Narendra Damodar Das Modi",
+            "option_c" : "Rahul Gandhi",
+            "option_d" : "Jawaharlal Nehru",
+            "ans" : "D",
+            "_id" : ObjectId("61ed90def66d53246a06259d")
+        }
+    ],
+    "__v" : 8
+}

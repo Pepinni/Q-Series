@@ -31,7 +31,7 @@ app.use(session({
 app.use(passport.initialize()); 
 app.use(passport.session());
 
-mongoose.connect("mongodb://localhost:27017/QSeries", {useNewUrlParser: true,useUnifiedTopology: true,}); //Running on localhost
+mongoose.connect("mongodb://localhost:27017/QSeries")//, {useNewUrlParser: true,useUnifiedTopology: true,}); //Running on localhost
 // mongoose.connect(String(process.env.PASS),{ useNewUrlParser: true , useUnifiedTopology: true}); // Running on a remote server
 
 
