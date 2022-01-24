@@ -31,7 +31,7 @@ app.use(session({
 app.use(passport.initialize()); 
 app.use(passport.session());
 
-mongoose.connect("mongodb://localhost:27017/QSeries")//, {useNewUrlParser: true,useUnifiedTopology: true,}); //Running on localhost
+mongoose.connect("mongodb://localhost:27017/Test")//, {useNewUrlParser: true,useUnifiedTopology: true,}); //Running on localhost
 // mongoose.connect(String(process.env.PASS),{ useNewUrlParser: true , useUnifiedTopology: true}); // Running on a remote server
 
 
@@ -41,20 +41,23 @@ const userSchema = new mongoose.Schema({
     name : String,
     pic : String,
     email : String,
-    registration : {
-      event_name : {
-        type:String,
-        default:""
-      },
-      ticked : {
-        type : [String],
-        default : []
-      },
-      score : {
-        type : Number,
-        default : 0,
-      },
-    }
+    registration : 
+    [
+      {
+        event_name : {
+          type:String,
+          default:""
+        },
+        ticked : {
+          type : [String],
+          default : []
+        },
+        score : {
+          type : Number,
+          default : 0,
+        },
+      }
+    ]
 });
 
 const questionSchema = new mongoose.Schema({
@@ -216,20 +219,20 @@ app.post('/delevent', function(req,res){
       console.log("Event Deleted Successfully");
     }
   })
-  User.find({}, function(err,foundUser){
-    if(err){
-      console.log(err);
+  User.updateMany({},
+    {
+      $pull : 
+      {
+        registration :
+        {
+          event_name : req.body.event_name
+        }
+      }
+    },
+    function(req,res){
+      console.log("Event deleted Successfully");
     }
-    else{
-      foundUser.forEach(function(user){
-        user.registration.event_name = "";
-        user.registration.ticked = [];
-        user.registration.score = 0;
-        user.save();
-        console.log(user);
-      })
-    }
-  })
+  )
   res.redirect('/account');
 })
 
@@ -242,7 +245,12 @@ app.post('/register', function(req,res){
     }
     else{
       console.log(req.user._id);
-      foundUser.registration.event_name = req.body.event_name;
+      const event = {
+        event_name : req.body.event_name,
+        ticked : [],
+        score : 0
+      }
+      foundUser.registration.push(event);
       foundUser.save();
       res.redirect('/account');
     }
@@ -376,24 +384,32 @@ app.post('/quizsubmit', function(req,res){
         res.redirect('/account');
       }
       else{
-        Event.find({}, function(err,found){
+        Event.findOne({event_name:req.body.event_name}, function(err,found){
           if(err){
             console.log(err);
           }
           else{
+            var ind=0;
+            for(var i=0; i<user.registration.length; i++){
+              if(user.registration[i].event_name === found.event_name){
+                ind=i;
+                break;
+              }
+            }
+            console.log(ind);
             var keys = Object.keys(req.body);
             var score=0;
             var i=0;
-
             keys.forEach(function(key,index){
               const key_value = `${req.body[key]}`;
-              user.registration.ticked.push(key_value);
-              if(key_value === found[0].questions[i].ans){
-                score++;
+              if(key_value !== found.event_name){
+                user.registration[ind].ticked.push(key_value);
+                if(key_value === found.questions[index].ans){
+                  score++;
+                }
               }
-              i++;
             })
-            user.registration.score=score;
+            user.registration[ind].score=score;
             user.save();
             res.redirect('/account');
           }

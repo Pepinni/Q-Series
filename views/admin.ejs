@@ -19,10 +19,20 @@
                 <h3 class="startDate">
                     <%= event.startDate.toLocaleString(); %>
                 </h3>
-                <form class="manage" action="/manage" method="POST">
-                    <input type="text" name="event_name" value="<%=event.event_name%>" hidden>
-                    <button type="submit" class="btn btn-outline-danger">Manage Event</button>
-                </form>
+                <%const present=new Date(); %>
+                <% if (present < event.endDate) { %>
+                    <form class="manage" action="/manage" method="POST">
+                        <input type="text" name="event_name" value="<%=event.event_name%>" hidden>
+                        <button type="submit" class="btn btn-outline-danger">Manage Event</button>
+                    </form>
+                <% }else{ %>
+                    <form class="manage" action="/viewresults" method="POST">
+                        <input type="text" name="event_name" value="<%=event.event_name%>" hidden>
+                        <button type="submit" class="btn btn-outline-danger">View Score</button>
+                    </form>
+                <% } %> 
+
+                
             </div>
         </div>
     </div>
