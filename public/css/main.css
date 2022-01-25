@@ -54,7 +54,8 @@ hr:not([size]){
 .tests{
     text-align: center;
     font-family: 'Oswald', sans-serif;
-    font-size: 45px;
+    font-size: 40px;
+    color: navy;
 }
 .event-pic{
     width:100px;
