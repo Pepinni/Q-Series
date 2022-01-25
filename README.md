@@ -102,18 +102,34 @@ If you want to host a test on QSeries the following steps can be followed to get
 
    > mongod
    >
-3. When you login with the host's gmail-ID, you will be taken to the admin page. The administrator has the following functionalities in control:
+3. ###### When you login with the host's gmail-ID, you will be taken to the admin page. The administrator has the following functionalities in control:
+
 
    1. Add a new Quiz.
+
+      ![1643126489549.png](image/README/1643126489549.png)
    2. Add and delete questions corresponding to a Quiz.
+
+      ![1643127046675.png](image/README/1643127046675.png)
    3. Modify the particulars of a Quiz.
+
+      ![1643127089956.png](image/README/1643127089956.png)
    4. View an existing Quiz.
    5. Delete a Quiz.
+
+      ![1643127338194.png](image/README/1643127338194.png)
+   6. View Scores of all the test-takers
+
+      ![1643129353986.png](image/README/1643129353986.png)
 4. A test taker has the following functionalities in control:
 
    1. Login with any Gmail-ID.
    2. Regsiter for a Quiz.
+
+      ![1643128974941.png](image/README/1643128974941.png)
    3. Attempt a quiz at the scheduled time.
+
+      ![1643129014063.png](image/README/1643129014063.png)
    4. View his/her score for an attemted quiz.
 
 ---
